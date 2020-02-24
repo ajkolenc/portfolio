@@ -1,0 +1,10 @@
+.container {
+	background-color: #fff;
+	color: #004;
+}
+
+.header {
+	composes: header from "../typography.css";
+	font-weight: lighter;
+	text-align: center;
+}

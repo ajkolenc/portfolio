@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap");
+
+.header {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+	font-size: 4em;
+	margin: 0;
+	margin-bottom: 0.5em;
+}
+
+.paragraph {
+	font-family: "Open Sans", sans-serif;
+	font-weight: normal;
+}
