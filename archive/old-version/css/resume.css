@@ -1,0 +1,154 @@
+html {
+}
+
+body {
+	position: relative;
+	width: 100%;
+
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 0.4cm;
+
+	background-color: #333;
+
+	--header-height: 50px;
+	--content-margin: 40px;
+
+	--dark-gray: #333;
+	--gray: #484848;
+	--light-gray: #666;
+	--accent-color: #386A68;
+	--accent-dark: #245452;
+	--accent-light: #54807E;
+	--accent-lightest: #A4D0CE;
+	--accent-white: #DFF0EE;
+}
+
+main {	
+	position: relative;
+	width: 8.5in;
+	height: 11in;
+
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 0;
+
+	line-height: 1.5em;
+	background-color: #FFF;
+}
+
+#sideColumn {
+	width: 6cm;
+	height: 100%;
+	float: left;
+	background-color: var(--accent-white) !important;
+	border-right: 1px solid var(--accent-lightest);
+	padding-top: 0.9cm;
+	padding-left: 0.7cm;
+	box-sizing: border-box;
+}
+
+#mainColumn {
+	width: 15cm;
+	height: 100%;
+	float: left;
+	padding: 0.7cm;
+	box-sizing: border-box;
+}
+
+h1 {
+	display: inline-block;
+	color: var(--accent-color);
+	font-size: 4.5em;
+	line-height: 1em;
+	text-transform: uppercase;
+	font-weight: lighter;
+
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 0.1cm;
+}
+
+#tags {
+	display: block;
+	padding-top: 0.1cm;
+	position: relative;
+	float: right;
+	text-align: right;
+	font-size: 0.8em;
+}
+
+.subtitle {
+	text-align: right;
+	display: inline-block;
+	-webkit-print-color-adjust: exact;
+	background-color: var(--accent-color);
+	color: white;
+	padding: 0.1cm 0.2cm;
+	border-radius: 0.15cm;
+	font-weight: lighter;
+	text-transform: uppercase;
+	margin-bottom: 0.1cm;
+}
+
+h2 {
+	display: inline-block;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	font-weight: lighter;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 0.25cm;
+	padding-top: 0.2cm;
+}
+
+h3 {
+	font-size: 1.1em;
+	margin: 0px;
+	margin-bottom: 0.1cm;
+}
+
+h4 {
+	color: var(--accent-color);
+	display: inline-block;
+	font-size: 1em;
+	line-height: 1.2em;
+	margin: 0px;
+	margin-bottom: 0.2cm;
+}
+
+p {
+	padding-bottom: 0.1cm;
+	margin: 0;
+	margin-bottom: 0.5cm;
+}
+
+ul {
+	margin: 0;
+	margin-bottom: 0.5cm;
+}
+
+.smallBreak {
+	display: block;
+	padding-bottom: 0.2cm;
+}
+
+.narrowLines {
+	line-height: 1.2em;
+}
+
+.date {
+	display: block;
+	float: right;
+	font-style: italic;
+	line-height: 1.2em;
+}
+
+@media print {
+	@page {
+		margin: 0;
+	}
+}
+

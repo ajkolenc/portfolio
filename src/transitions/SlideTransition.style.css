@@ -1,0 +1,36 @@
+.slideForward {
+	--direction: 1;
+}
+
+.slideBack {
+	--direction: 1;
+}
+
+.slide {
+	position: absolute;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.slideEnter {
+	opacity: 0;
+	transform: translateY(0px);
+}
+
+.slideEnterActive {
+	opacity: 1;
+	transform: translateY(0px);
+	transition: 0.3s all ease 0.2s;
+}
+
+.slideExitActive {
+	opacity: 1;
+	transition: 0.3s all ease 0s;
+}
+
+.slideExit {
+	opacity: 0;
+	transform: translateY(-0px);
+}

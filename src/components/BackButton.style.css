@@ -1,0 +1,25 @@
+.button {
+	composes: gradientBackground from "../colors.css";
+	border-radius: 10px;
+	display: block;
+	width: 50%;
+	outline: 0;
+	border: 0;
+	padding: 3px;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+}
+
+.buttonTextContainer {
+	background-color: white;
+	border-radius: 7px;
+	box-sizing: border-box;
+	padding: 5px 10px;
+}
+
+.buttonText {
+	composes: text from "../typography.css";
+	composes: gradientText from "../typography.css";
+	font-size: 2em;
+	font-weight: bolder;
+}

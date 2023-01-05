@@ -1,0 +1,182 @@
+@font-face {
+  font-family: "Market Deco";
+  src: url("/fonts/Belgrad.ttf"); }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FAF; }
+
+body, input {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px; }
+
+h1, h2, h3, h4, h5, button {
+  font-family: 'Righteous', fantasy, sans-serif;
+  text-transform: uppercase; }
+
+h2 {
+  color: #D0D;
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 10px; }
+
+h3 {
+  color: #333;
+  font-size: 20px;
+  line-height: 1.2em;
+  margin: 0;
+  margin-bottom: 5px; }
+
+h4 {
+  color: #666;
+  font-size: 18px;
+  margin: 0px;
+  margin-bottom: 5px; }
+
+form {
+  margin: 0; }
+
+p {
+  margin-top: 0px; }
+
+ul {
+  margin-top: 0px;
+  padding-left: 25px; }
+  ul li {
+    margin-bottom: 5px; }
+
+button {
+  cursor: pointer;
+  font-size: 1.2em;
+  background-color: #D0D;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 10px;
+  outline: 0; }
+  button.full {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 15px; }
+  button:disabled {
+    cursor: default;
+    background-color: #888; }
+
+#reactRoot {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%; }
+
+header {
+  position: fixed;
+  padding: 10px;
+  height: 30px;
+  width: 100%;
+  background-color: #333; }
+  header a {
+    text-decoration: none; }
+    header a img {
+      position: relative; }
+  header h1 {
+    position: relative;
+    display: inline-block;
+    margin: 0px;
+    margin-left: 10px;
+    top: -5px;
+    font-size: 28px;
+    color: white; }
+  header h1, header h1:active, header h1:visited, header h1:hover {
+    text-decoration: none; }
+
+#dragRaceLogo {
+  height: 100%; }
+
+main {
+  height: calc(100% - 50px);
+  padding-top: 50px; }
+
+.card {
+  margin: 10px;
+  padding: 10px 15px;
+  padding-bottom: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4); }
+
+.titleCard {
+  padding-bottom: 10px; }
+  .titleCard h2 {
+    margin-bottom: 0px; }
+
+.loginInput {
+  position: relative;
+  display: block;
+  margin: 10px 0px;
+  line-height: 1.3em;
+  padding: 7px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #CCC; }
+
+.loginButtons {
+  display: inline-block;
+  margin-top: 10px; }
+  .loginButtons button {
+    padding: 10px 30px; }
+
+.errorMessage {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 0px; }
+
+.secondaryButton {
+  background-color: #FAF;
+  color: black; }
+
+.queensTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px; }
+  .queensTable td {
+    padding: 10px 0px;
+    border-top: 1px solid #AAA;
+    border-bottom: 1px solid #AAA; }
+  .queensTable .queenPic {
+    width: 100px; }
+    .queensTable .queenPic img {
+      height: 80px; }
+  .queensTable .eliminated {
+    text-decoration: line-through; }
+
+.queenChoice, .queenDisplay {
+  cursor: pointer;
+  display: block;
+  height: 70px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  clear: both;
+  background-color: #e2e7fb; }
+  .queenChoice.chosen, .queenDisplay.chosen {
+    background-color: #D0D;
+    color: white; }
+  .queenChoice .queenPic, .queenDisplay .queenPic {
+    display: inline-block;
+    height: 100%; }
+    .queenChoice .queenPic img, .queenDisplay .queenPic img {
+      height: 100%; }
+  .queenChoice .queenInfo, .queenDisplay .queenInfo {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 100%;
+    vertical-align: bottom;
+    margin-left: 15px;
+    padding-top: 10px; }
+
+.queenDisplay {
+  cursor: default; }

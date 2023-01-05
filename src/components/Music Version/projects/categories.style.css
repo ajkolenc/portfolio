@@ -1,0 +1,62 @@
+.homeBackground {
+/* 
+	background-image: linear-gradient(
+		330deg,
+		hsl(273deg 49% 11%) 0%,
+		hsl(247deg 32% 21%) 23%,
+		hsl(224deg 37% 29%) 47%,
+		hsl(212deg 48% 35%) 68%,
+		hsl(203deg 60% 39%) 85%,
+		hsl(196deg 76% 41%) 100%
+	  );	
+	background-image: linear-gradient(
+		330deg,
+		hsl(336deg 77% 14%) 0%,
+		hsl(351deg 52% 25%) 20%,
+		hsl(6deg 46% 35%) 40%,
+		hsl(18deg 50% 42%) 60%,
+		hsl(28deg 51% 47%) 80%,
+		hsl(38deg 56% 53%) 100%
+	  );
+	  background-image: linear-gradient(
+		330deg,
+		hsl(0deg 0% 95%) 0%,
+		hsl(344deg 0% 95%) 23%,
+		hsl(344deg 0% 94%) 47%,
+		hsl(344deg 0% 94%) 68%,
+		hsl(344deg 0% 93%) 85%,
+		hsl(0deg 0% 93%) 100%
+	  ); */
+	  background-color: white; /*#fffbea;*/
+}
+
+.homeTitleBackground {
+	background-color: #f4e8de;
+}
+
+.musicBackground {
+	/* background: linear-gradient(-10deg, #0b3b37, #34883f); */
+	background-color: #ddbcbc;
+}
+
+.musicTitleBackground {
+	background-color: #9C3D54;
+}
+
+.gamesBackground {
+	/* background: linear-gradient(-10deg, #2b1120, #de7168); */
+	background-color: #f0d7b4;
+}
+
+.gamesTitleBackground {
+	background-color: #d29641;
+}
+
+.otherBackground {
+	/* background: linear-gradient(-10deg, #260920, #6c51a7); */
+	background-color: #f9c8a8;
+}
+
+.otherTitleBackground {
+	background-color: #E2703A;
+}

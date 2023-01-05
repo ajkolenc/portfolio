@@ -1,0 +1,747 @@
+html {
+}
+
+body {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 18px;
+	line-height: 1.5em;
+
+	background-color: #333;
+
+	--header-height: 50px;
+	--content-margin: 40px;
+
+	--dark-gray: #333;
+	--gray: #484848;
+	--light-gray: #666;
+	--accent-color: #386A68;
+	--accent-dark: #245452;
+	--accent-light: #54807E;
+	--accent-lightest: #A4D0CE;
+}
+
+.pageFlipped {
+}
+
+header {
+	position: relative;
+
+	width: 100%;
+	height: var(--header-height);
+
+	background-color: var(--dark-gray);
+}
+
+p {
+	line-height: 1.5em;
+}
+
+#mobileMenu {
+	display: none;
+}
+
+#titleLink {
+	cursor: pointer;
+	float: left;
+	height: 100%;
+
+	padding-left: 20px;
+
+	font-size: 1.5em;
+
+	line-height: var(--header-height);
+	vertical-align: middle;
+
+	color: white;
+	text-decoration: none;
+}
+
+nav {
+	float: left;
+
+	height: 100%;
+
+	padding-left: 30px;
+}
+
+nav a {
+	padding: 0px 10px;
+
+	font-size: 1.3em;
+	font-weight: lighter;
+	line-height: var(--header-height);
+	color: white;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+nav a:hover {
+	color: var(--accent-light);
+}
+
+#archiveLink {
+	cursor: pointer;
+}
+
+#socialIcons {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: var(--header-height);
+}
+
+.socialIcon {
+	display: inline-block;
+	padding: 0px;
+}
+
+.socialIcon img {
+	height: 100%;
+	padding: 0px;
+}
+
+main {
+	position: absolute;
+
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - var(--header-height));
+
+	top: var(--header-height);
+
+	background-color: #FFF;
+}
+
+#projectTiles {
+	background-image: url('../images/grid.png');
+	background-repeat: repeat;	
+	background-color: var(--accent-dark);
+
+	/*transform: rotateY(0deg)*/;
+	transform: translateX(0%);
+	transition: 0.5s;
+	overflow: hidden;
+}
+
+#projectTiles.flipped {
+	/*transform: rotateY(180deg);*/
+	transform: translateX(-100%);
+}
+
+.tile {
+	position: relative;
+	float: left;
+
+	cursor: pointer; 
+
+    --tile-margin: 40px;
+    margin: var(--tile-margin);
+
+    background-color: #333;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.tileOverlay {
+
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: calc(100% - 60px);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.tileTitle {
+	position: absolute;
+	display: block;
+
+	width: 100%;
+	height: 60px;
+
+	bottom: 0px;
+
+	background-color: var(--accent-color);
+}
+
+.tile h1 {
+	position: absolute;
+	bottom: 0;
+
+	width: 100%;
+
+	padding: 0;
+	margin: 0;
+
+	text-transform: uppercase;
+	font-weight: lighter;
+	font-size: 1.7em;
+	text-align: center;
+	color: white;
+	line-height: 2em;
+}
+
+#smallTileGroup {
+	float: left;
+	width: 25%;
+	height: 50%;
+}
+
+.smallTile {
+	width: calc(100% - 1 * var(--tile-margin));
+	height: calc(50% - 1.5 * var(--tile-margin));
+	margin-top: calc(0.5 * var(--tile-margin));
+	margin-bottom: calc(0.5 * var(--tile-margin));
+	margin-right: 0px;
+}
+
+#smallTile1 {
+	margin-top: var(--tile-margin);
+}
+
+#smallTile2 {
+	margin-bottom: var(--tile-margin);
+}
+
+#mainTile {
+	height: calc(100% - 2 * var(--tile-margin));
+	width: calc(50% - var(--tile-margin));
+	margin-right: 0px;
+}
+
+#secondaryTile {
+	width: calc(50% - 2 * var(--tile-margin));
+	height: calc(50% - 1 * var(--tile-margin));
+	margin-bottom: 0px;
+}
+
+#tertiaryTile {
+	float: right;
+	width: calc(25% - 2 * var(--tile-margin));	
+	height: calc(50% - 2 * var(--tile-margin));
+}
+
+#projectInfo {
+	background-color: #FFF;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+
+	transform: translateX(100%);
+	transition: transform 0.5s;
+}
+
+#projectInfo.flipped {
+	transform: translateX(0%);
+}
+
+#projectInfo.archive {
+	background-image: url('../images/grid.png');
+	background-repeat: repeat;	
+	background-color: var(--accent-dark);
+}
+
+#projectTitleBar {
+	width: calc(100% - 2 * var(--content-margin));
+	padding: 10px var(--content-margin);
+	background-color: var(--accent-color);
+}
+
+#projectTitleBar h1 {
+	display: inline;
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: lighter;
+	font-size: 2.2em;
+	color: white;	
+	line-height: 1.2em;
+}
+
+#projectWebsite {
+	display: inline-block;
+	width: 1.6em;
+	height: 1.6em;
+	padding: 10px;
+	padding-top: 2px;
+	vertical-align: top;
+}
+
+#projectWebsite img {
+	width: 100%;
+	height: 100%;
+}
+
+#projectInfo h2 {
+	color: #666;
+	text-transform: uppercase;
+	padding-top: 20px;
+	clear: both;
+}
+
+.roleInfo {
+	width: 100%;
+	background-color: #DDD;
+	box-sizing: border-box;
+	padding: 5px var(--content-margin);
+	font-size: 1.1em;
+	line-height: 1.5em;
+}
+
+#projectVideo {
+	margin-top: 20px;
+}
+
+.videoPlayer {	
+	position: relative;
+	display: block;
+
+	width: 500px;
+	height: 320px;	
+
+	margin-bottom: 15px;
+
+	background-color: #CCC;
+}
+
+.smallerVideo {
+	width: 350px;
+	height: 200px;
+}
+
+.leftVideo {
+	float: left;
+	margin-right: 25px;	
+}
+
+.rightVideo {
+	float: right;
+	margin-left: 15px;	
+}
+
+.videoEmbed {
+	width: 100%;
+	height: 100%;
+}
+
+.audioPlayer {
+	position: relative;
+	display: block;
+	width: 500px;
+	margin-bottom: 15px;
+	background-color: var(--accent-light);
+}
+
+.audioControls {
+	--audio-control-height: 70px;
+	height: var(--audio-control-height);
+}
+
+.playButton {
+	float: left;
+	width: calc(var(--audio-control-height) - 10px);
+	height: calc(var(--audio-control-height) - 10px);
+
+	border: 0;
+	margin: 10px;
+	margin-right: 0px;
+	box-sizing: border-box;
+	background-size: cover;
+	background-color: var(--accent-lightest);
+	background-image: url("../images/play.png");
+	border-radius: 100px;
+}
+
+.playButton.playing {
+	background-image: url("../images/pause.png");	
+}
+
+.playButton:hover {	
+	background-color: #DDD;
+}
+
+.songDisplay {
+	position: relative;
+	display: inline-block;
+	margin: 0px;
+	width: calc(100% - var(--audio-control-height));
+	height: var(--audio-control-height);
+}
+
+.songTitle {
+	text-align: center;
+	padding: 8px 0px;	
+
+	color: white;
+	font-size: 0.9em;
+	font-weight: lighter;
+}
+
+.songProgress {
+	position: absolute;
+	bottom: 20px;
+	width: calc(100% - 40px);
+	margin: 0 20px;
+	height: 6px;
+
+	background-color: var(--accent-dark);
+}
+
+.progressBar {
+	width: 30%;
+	height: 100%;
+	background-color: var(--accent-lightest);
+}
+
+.timeLabel {
+	position: absolute;
+	color: white;
+	top: 3px;
+	font-size: 0.6em;
+	font-weight: lighter;
+}
+
+.currentTime {
+	left: 0;
+}
+
+.songLength {
+	right: 0;
+}
+
+.songSelection {
+	position: relative;
+	width: 100%;	
+	height: 0;
+	padding-bottom: 66.66666%;
+	background-color: var(--accent-dark);
+	overflow: hidden;
+}
+
+.albums {
+	width: 100%;
+	height: 100%;	
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.album {
+	position: relative;	
+	float: left;
+	width: calc(33.3333% - 23.3333px);
+	height: 0;
+	padding-bottom: calc(33.3333% - 23.3333px);
+	box-sizing: border-box;
+	background-color: var(--accent-light);
+	overflow: hidden;
+	margin: 10px;
+	cursor: pointer;
+	transition: background-color 0.4s;
+}
+
+.album:hover {
+	background-color: var(--accent-lightest);	
+}
+
+.albumInfo {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.albumInfo img {
+	width: 100%;
+	height: 100%;
+}
+
+.albumInfo span {
+	display: block;
+	position: absolute;
+	font-size: 0.7em;
+	line-height: 1.2em;
+	font-weight: bold;
+	padding: 5px 0px;
+	text-transform: uppercase;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(0,0,0,0.3);
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.songs {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #EEE;
+	box-shadow: 0px 0px 70px 0px black;
+	transform: translateX(0px);
+	transition: transform 0.5s;
+}
+
+.songs.closed {
+	transform: translateX(calc(100% + 100px));	
+}
+
+.albumTitleBar {
+	display: block;
+	width: 100%;
+	height: 50px;
+	padding: 10px 10px;
+	box-sizing: border-box;
+	background-color: var(--accent-dark);
+}
+
+.backButton {
+	display: inline-block;
+	vertical-align: middle;
+	height: 20px;
+	margin-right: 0px;
+	cursor: pointer;
+}
+
+.songs h1 {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 1.3em;	
+	color: white;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.songList {
+	overflow-y: auto;
+	height: calc(100% - 50px);
+}
+
+.song {
+	width: 100%;
+	height: 45px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding: 8px 10px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.song:hover {
+	background-color: #FAFAFA;
+}
+
+.songName {
+}
+
+#projectInfoContent {
+	padding: 10px var(--content-margin);
+}
+
+#projectContribution {
+	clear: both;
+}
+
+#contactInfo {
+	padding: 15px var(--content-margin);
+}
+
+.archiveProject {
+	margin-bottom: 25px;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.archiveTitlebar {
+	padding: 10px 15px;
+	cursor: pointer;
+	background-color: var(--accent-color);
+}
+
+.archiveProject h1{
+	display: inline;
+	line-height: 1.2em;
+	margin: 0;
+	padding-left: 10px;
+	text-transform: uppercase;
+	font-weight: lighter;
+	color: white;
+}
+
+.archiveArrow {
+	display: inline-block;
+	vertical-align: top;
+	height: 30px;
+	padding: 5px 0px;
+	transform: rotate(0deg);
+	transition: transform 0.3s;
+}
+
+.archiveArrow.opened {
+	transform: rotate(180deg);
+}
+
+.archiveProjectCollapsable {
+	display: none;
+}
+
+.archiveProject .roleInfo {
+	padding-left: 20px;
+}
+
+.archiveProjectContent {
+	box-sizing: border-box;
+	padding: 10px 20px;
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.line {
+	display: inline-block;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.notransition {
+  transition: none !important;
+}
+
+@media(max-width: 900px) {
+	body {
+		--content-margin: 6%;
+	}
+
+	#mobileMenu {
+		display: block;		
+		float: left;
+		cursor: pointer;
+
+		box-sizing: border-box;
+		padding: 10px;
+		width: var(--header-height);
+		height: var(--header-height);
+	}
+
+	#titleLink {
+		padding-left: 0px;
+		font-size: 1.5em;
+	}
+
+	nav {
+		position: absolute;
+		float: none;
+		z-index: 1;
+
+		width: 160px;
+		height: auto;
+
+		margin-top: var(--header-height);
+		padding-left: 0px;
+
+		background-color: #444;
+		transform: translateX(-100%);
+		transition: transform 0.2s ease;
+	}
+
+	nav a {
+		display: block;
+		float: none;
+		font-size: 1.1em;
+		padding-left: 20px;
+	}
+
+	nav.displayed {
+		transform: translateX(0%);
+	}
+
+	#socialIcons {
+		position: relative;
+
+		padding-top: 5px;
+		width: 160px;
+		height: 40px;
+	}
+
+	.socialIcon {
+	}
+
+	.socialIcon img {
+		height: 100%;
+	}
+
+	.tile {
+		font-size: 0.7em;
+		cursor: pointer;
+		--tile-margin: 20px;
+	}
+
+	.tile h1 {
+		line-height: 1em;
+		margin-bottom: 15px;
+	}
+
+	.tileOverlay {
+		height: calc(100% - 53px);
+	}
+
+	.tileTitle {
+		height: 53px;
+	}
+
+	#mainTile {
+		width: calc(100% - 2 * var(--tile-margin));
+	}
+
+	#smallTileGroup {
+		width: 100%;
+		height: calc(25% - 2 * var(--tile-margin));
+		margin: 0;
+	}
+
+	#mainTile {
+		height: calc(40% - 2 * var(--tile-margin));
+	}
+
+	#secondaryTile, #tertiaryTile {
+		width: calc(50% - 1.5 * var(--tile-margin));
+		height: calc(35% - var(--tile-margin));
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	#secondaryTile {
+		margin-right: 0px;
+	}
+
+	#tertiaryTile {
+		margin-left: 0px;
+	}
+
+	.smallTile {		
+		width: calc(50% - 1.5 * var(--tile-margin));
+		height: calc(25% - var(--tile-margin));
+		margin-top: 20px;
+	}
+
+	.videoPlayer {
+		float: none;
+		width: 100%;
+		height: 50vw;
+		margin: 0;
+	}
+
+	.audioPlayer {
+		width: 100%;
+	}
+}
+
+@media(min-width: 1200px){
+	body {
+		--content-margin: calc((100% - 1000px)/2);
+	}
+}

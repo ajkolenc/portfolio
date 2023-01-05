@@ -1,0 +1,101 @@
+.albumDetails {
+	display: flex;
+	flex-direction: column;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0px 20px;
+	padding-top: 20px;
+}
+
+.header {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 20px;
+	border-bottom: 1px dotted white;
+}
+
+.albumCover {
+	flex-shrink: 0;
+	width: 150px;
+	height: 150px;
+	box-shadow: 0 0 15px -3px rgba(0, 0, 0, 0.5);
+	margin-right: 25px;
+}
+
+.albumDescription {
+	display: flex;
+	align-items: flex-end;
+	flex-shrink: 1;
+	font-size: 0.9em;
+	font-weight: lighter;
+	line-height: 1.5em;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.trackList {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.trackDetails {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: center;
+	padding: 20px 12px;
+	box-sizing: border-box;
+	background-color: rgba(255, 255, 255, 0);
+	transition: background-color 0.3s ease;
+	cursor: pointer;
+}
+
+.trackDetails:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.playButton {
+	width: 34px;
+	height: 34px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	padding: 0px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	transition: border 0.3s ease;
+}
+
+.trackDetails:hover .playButton {
+	border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.trackNumber {
+	margin: 0 20px;
+	margin-right: 15px;
+}
+
+.trackTitleArea {
+	flex-grow: 1;
+}
+
+.trackTitle {
+	margin-bottom: 1px;
+	font-size: 1em;
+}
+
+.trackAlbumTitle {
+	text-transform: uppercase;
+	font-size: 0.8em;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.trackDuration {
+	font-weight: lighter;
+}
+
+@media (max-width: 680px) {
+	.albumCover {
+		height: 120px;
+		width: 120px;
+	}
+}

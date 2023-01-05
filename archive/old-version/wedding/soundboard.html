@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            body {
+                background-color: #823;
+            }
+
+            h1 {
+                width: 100%;
+                margin: 50px;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 3em;
+                font-family: Georgia, "Times New Roman", Times, serif;
+                color: #db0;
+                text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+            }
+
+            #sorta {
+                display: inline-block;
+                background-color: #0ff;
+                padding: 10px 15px;
+                margin: 0px 10px;
+                box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.5);
+                transform: translateY(-5px);
+            }
+
+            #sorta span {
+                color: black;
+                font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+                font-size: 0.5em;
+                vertical-align: middle;
+                text-shadow: none;
+            }
+
+            button {
+                border: 5px outset #db0;
+                background: linear-gradient(135deg, #db0, rgb(218, 201, 110));
+                flex-grow: 2;
+                flex-basis: 10%;
+                margin: 20px;
+                font-size: 3em;
+                font-size: 3em;
+                font-family: Georgia, "Times New Roman", Times, serif;
+                color: rgb(126, 113, 43);
+                text-transform: uppercase;
+                text-shadow: 1px 1px 0px rgb(223, 212, 150);
+                outline: 0;
+            }
+
+            button:active {
+                border: 5px inset #db0;
+                background: linear-gradient(-135deg, #db0, rgb(170, 145, 0));
+                color: rgba(0, 0, 0, 0);
+                text-shadow: 1px 1px 0px rgb(126, 113, 43);
+            }
+
+            audio {
+                display: none;
+            }
+
+            #board {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .sfxRow {
+                flex-grow: 1;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function playSFX(audioID) {
+                var audio = document.getElementById(audioID);
+                audio.currentTime = 0;
+                audio.play();
+            }
+        </script>
+        <div id="board">
+            <h1>
+                The
+                <div id="sorta"><span>sorta</span></div>
+                Newlywed Game Soundboard
+            </h1>
+            <div class="sfxRow">
+                <button onclick="playSFX('theme-song')">Theme Song</button>
+                <button onclick="playSFX('timer')">Question Timer</button>
+                <button onclick="playSFX('bonus-round')">Bonus Round</button>
+            </div>
+            <div class="sfxRow">
+                <button onclick="playSFX('correct')">Correct</button>
+                <button onclick="playSFX('incorrect')">Incorrect</button>
+            </div>
+            <audio preload id="theme-song">
+                <source src="theme-song.wav" type="audio/wav" />
+            </audio>
+            <audio preload id="timer">
+                <source src="timer-10secs.wav" type="audio/wav" />
+            </audio>
+            <audio preload id="bonus-round">
+                <source src="bonus-round.wav" type="audio/wav" />
+            </audio>
+            <audio preload id="correct">
+                <source src="correct.wav" type="audio/wav" />
+            </audio>
+            <audio preload id="incorrect">
+                <source src="incorrect.wav" type="audio/wav" />
+            </audio>
+        </div>
+    </body>
+</html>
