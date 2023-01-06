@@ -1,4 +1,3 @@
-import { AlbumDetails } from "components/Music Version/AlbumDetails";
 import * as React from "react";
 import { Album } from ".";
 import { Categories, Project } from "../types";
@@ -12,13 +11,11 @@ export const BlackOakManorMusic: Project = {
 	iconURL: blackOakIcon,
 	renderPage: ({ project }) => {
 		return (
-			<AlbumDetails project={project} album={BlackOakManorAlbum}>
-				<p>
-					The music for Black Oak Manor was inspired by the noir film scores of
-					the 1940s and 50s. It is scored for full orchestra, with accompanying
-					pipe organ to emphasize the haunted house archetype.
-				</p>
-			</AlbumDetails>
+			<p>
+				The music for Black Oak Manor was inspired by the noir film scores of
+				the 1940s and 50s. It is scored for full orchestra, with accompanying
+				pipe organ to emphasize the haunted house archetype.
+			</p>
 		);
 	},
 };

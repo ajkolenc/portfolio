@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ProjectDetails } from "../../ProjectDetails";
 import { Categories, Project } from "../types";
 
 import pbsGamesIcon from "images/pbs-games_water_icon.jpg";
@@ -19,12 +18,6 @@ export const PBSGames: Project = {
 	iconURL: pbsGamesIcon,
 	size: "wide",
 	renderPage: ({ project }) => {
-		return (
-			<ProjectDetails
-				project={project}
-				roles={roles}
-				links={links}
-			></ProjectDetails>
-		);
+		return <div></div>;
 	},
 };

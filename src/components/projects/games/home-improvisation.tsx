@@ -1,7 +1,5 @@
 import * as React from "react";
 import { Categories, Project } from "../types";
-import * as styles from "../../App.style.css";
-import { ProjectDetails } from "../../ProjectDetails";
 
 import homeImprovIcon from "images/home_improv_icon.png";
 
@@ -28,15 +26,9 @@ export const HomeImprovisation: Project = {
 	size: "tall",
 	renderPage: ({ project }) => {
 		return (
-			<ProjectDetails
-				project={project}
-				roles={roles}
-				links={links}
-				platforms={platforms}
-				tech={tech}
-			>
+			<div>
 				<iframe
-					className={styles.videoEmbed}
+					// className={styles.videoEmbed}
 					width="480"
 					height="260"
 					src="https://www.youtube.com/embed/jneKUylcxIk"
@@ -82,7 +74,7 @@ export const HomeImprovisation: Project = {
 					integrating sound effects, and countless other tasks over the
 					development cycle.
 				</p>
-			</ProjectDetails>
+			</div>
 		);
 	},
 };

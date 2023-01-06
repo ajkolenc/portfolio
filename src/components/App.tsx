@@ -1,170 +1,91 @@
 import * as React from "react";
-import {
-	BrowserRouter as Router,
-	Route,
-	RouteProps,
-	Link,
-} from "react-router-dom";
+import styles from "./App.module.css";
+import { TabGroup } from "./elements/TabGroup";
 
-import { Home } from "./Home";
-
-import * as styles from "./App.style.css";
-import * as slideStyles from "../transitions/SlideTransition.style.css";
-
-import railGif from "../images/railriders_optimized.gif";
-import codingGif from "../images/coding_optimized.gif";
-import musicGif from "../images/music_cropped.gif";
-import homeImprovGif from "../images/home_improv.gif";
-
-import facebookIcon from "../images/facebook_icon_white.png";
-import twitterIcon from "../images/twitter_icon_white.png";
-import emailIcon from "../images/email_icon_white.png";
-import githubIcon from "../images/github_icon_white.png";
-import linkedInIcon from "../images/linkedin_icon_white.png";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { GameDevelopment } from "./GameDevelopment";
-import { SlideTransition } from "../transitions/SlideTransition";
-import { Music } from "./Music";
-import { WebDevelopment } from "./WebDevelopment";
+const tabs = ["All", "Games", "Music", "Other"];
 
 export const App: React.FunctionComponent = () => {
-	return (
-		<Router>
-			<div className={styles.body}>
-				<div className={styles.main}>
-					<Header />
-					<Routes />
-				</div>
-				<div className={styles.footer}>
-					<span className={styles.footerHeader}>Where to Find Me</span>
-					<SocialIcon
-						className={styles.twitterIcon}
-						socialLink="http://www.twitter.com/ajkolenc"
-						icon={twitterIcon}
-					/>
-					<SocialIcon
-						className={styles.emailIcon}
-						socialLink="mailto:ajkolenc@gmail.com"
-						icon={emailIcon}
-					/>
-					<SocialIcon
-						className={styles.linkedInIcon}
-						socialLink="https://www.linkedin.com/in/ajkolenc/"
-						icon={linkedInIcon}
-					/>
-					<SocialIcon
-						className={styles.githubIcon}
-						socialLink="https://github.com/ajkolenc"
-						icon={githubIcon}
-					/>
-				</div>
-			</div>
-		</Router>
-	);
-};
+	const [selectedProjectTab, setSelectedProjectTab] = React.useState(0);
 
-export const Header: React.FunctionComponent = () => {
-	const isHome = false;
 	return (
-		<Link
-			to="/"
-			replace={isHome}
-			className={styles.header}
-			style={isHome ? null : { fontSize: "1.7em" }}
-		>
-			AJ Kolenc
-		</Link>
-	);
-};
-
-export const Routes: React.FunctionComponent = () => {
-	const isHome = false;
-	return (
-		<div
-			className={[
-				styles.container,
-				isHome ? slideStyles.slideBack : slideStyles.slideForward,
-			].join(" ")}
-		>
-			<Route key="gamedev" path="/games">
-				{(props: any) => (
-					<AppPage {...props} isSubpage={true}>
-						<GameDevelopment />
-					</AppPage>
-				)}
-			</Route>
-			<Route key="webdev" path="/web">
-				{(props: any) => (
-					<AppPage {...props} isSubpage={true}>
-						<WebDevelopment />
-					</AppPage>
-				)}
-			</Route>
-			<Route key="music" path="/music">
-				{(props: any) => (
-					<AppPage {...props} isSubpage={true}>
-						<Music />
-					</AppPage>
-				)}
-			</Route>
-			<Route key="home" path="/">
-				{(props: any) => (
-					<AppPage {...props} isSubpage={false}>
-						<Home />
-					</AppPage>
-				)}
-			</Route>
+		<div className={styles.content}>
+			<header>
+				<div className={styles.headerText}>
+					<h1 className={styles.websiteTitle}>AJ Kolenc</h1>
+					<p className={styles.websiteSubtitle}>
+						I work on games, music, and lots of other stuff.
+					</p>
+				</div>
+				<nav>
+					<a className={styles.selected} href="projects">
+						Projects
+					</a>
+					<a href="blog">Blog</a>
+				</nav>
+			</header>
+			<section>
+				<TabGroup
+					options={tabs}
+					selectedOptionIndex={selectedProjectTab}
+					onOptionSelected={(option, index) => setSelectedProjectTab(index)}
+				/>
+				<div className={styles.contentPreviewList}>
+					<ContentPreview
+						title="Home Improvisation"
+						subtitle="Built in Unity | Local and Online Multiplayer | VR Support"
+						description="Build IKEA furniture without instructions. Blah blah blah blah blah blah
+						blah blah blah"
+						imageSrc="test"
+					/>
+					<ContentPreview
+						title="Home Improvisation"
+						subtitle="Built in Unity | Local and Online Multiplayer | VR Support"
+						description="Build IKEA furniture without instructions. Blah blah blah blah blah blah
+						blah blah blah"
+						imageSrc=""
+					/>
+					<ContentPreview
+						title="Home Improvisation"
+						subtitle="Built in Unity | Local and Online Multiplayer | VR Support"
+						description="Build IKEA furniture without instructions. Blah blah blah blah blah blah
+						blah blah blah"
+						imageSrc="test"
+					/>
+					<ContentPreview
+						title="Home Improvisation"
+						subtitle="Built in Unity | Local and Online Multiplayer | VR Support"
+						description="Build IKEA furniture without instructions. Blah blah blah blah blah blah
+						blah blah blah"
+						imageSrc="test"
+					/>
+				</div>
+			</section>
 		</div>
 	);
 };
 
-interface AppPageProps {
-	isSubpage: boolean;
+export interface ContentPreviewProps {
+	title: string;
+	subtitle: string;
+	description: string;
+	imageSrc?: string;
 }
-export const AppPage: React.FunctionComponent<AppPageProps> = (props) => {
+export const ContentPreview: React.FunctionComponent<ContentPreviewProps> = ({
+	title,
+	subtitle,
+	description,
+	imageSrc,
+}) => {
 	return (
-		<SlideTransition in={false}>{props.children}</SlideTransition>
-	);
-};
-
-interface SocialIconProps {
-	className?: string;
-	socialLink: string;
-	icon: string;
-}
-const SocialIcon: React.FunctionComponent<SocialIconProps> = (props) => {
-	return (
-		<a
-			target="_blank"
-			className={props.className ?? styles.socialIcon}
-			href={props.socialLink}
-		>
-			<img src={props.icon} />
-		</a>
-	);
-};
-
-export interface SectionProps {
-	header?: string;
-	innerContentStyle?: string;
-}
-export const Section: React.FunctionComponent<SectionProps> = (props) => {
-	const sectionStyle = props.header ? styles.section : styles.titlelessSection;
-
-	const contentStyle = styles.sectionContent;
-
-	return (
-		<div className={sectionStyle}>
-			{props.header && <h2 className={styles.sectionHeader}>{props.header}</h2>}
-			<div className={contentStyle}>
-				<div className={props.innerContentStyle ?? styles.sectionInnerContent}>
-					{props.children}
-				</div>
+		<div className={styles.contentPreview}>
+			{imageSrc && (
+				<img className={styles.contentPreviewImage} src={imageSrc} />
+			)}
+			<div className={styles.contentPreviewDescription}>
+				<h1 className={styles.contentPreviewTitle}>{title}</h1>
+				<p className={styles.contentPreviewSubtitle}>{subtitle}</p>
+				<p>{description}</p>
 			</div>
 		</div>
 	);
-};
-
-export const Divider: React.FunctionComponent = () => {
-	return <div className={styles.divider}></div>;
 };

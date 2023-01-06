@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ProjectDetails } from "../../ProjectDetails";
 import { Categories, Project } from "../types";
 
 import acpIcon from "images/acp_icon.jpg";
@@ -19,12 +18,6 @@ export const ACPPhoenixMural: Project = {
 	iconURL: acpIcon,
 	size: "wide",
 	renderPage: ({ project }) => {
-		return (
-			<ProjectDetails
-				project={project}
-				links={links}
-				roles={roles}
-			></ProjectDetails>
-		);
+		return <div></div>;
 	},
 };

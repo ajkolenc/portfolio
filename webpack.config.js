@@ -1,18 +1,30 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { TypedCssModulesPlugin } = require("typed-css-modules-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
 	entry: {
 		app: "./src/index.tsx",
 	},
+	mode: "development",
 	// Enable sourcemaps for debugging webpack's output.
 	module: {
 		rules: [
 			{
 				test: /\.(png|svg|jpg|jpeg|gif|mp3|wav)$/,
 				use: ["file-loader"],
+			},
+			{
+				test: /\.css$/,
+				use: [
+					"style-loader",
+					{
+						loader: "css-loader",
+						options: {
+							modules: true,
+						},
+					},
+				],
 			},
 			{
 				test: /\.ts(x?)$/,
@@ -28,19 +40,6 @@ module.exports = {
 				enforce: "pre",
 				test: /\.js$/,
 				loader: "source-map-loader",
-			},
-			{
-				test: /\.css$/,
-				use: [
-					"style-loader",
-					// Use CSS Modules
-					{
-						loader: "css-loader",
-						options: {
-							modules: true,
-						},
-					},
-				],
 			},
 		],
 	},
@@ -58,7 +57,7 @@ module.exports = {
 	},
 	devtool: "source-map",
 	devServer: {
-		contentBase: "./dist",
+		static: "./dist",
 		host: "0.0.0.0",
 		historyApiFallback: true,
 	},
@@ -66,9 +65,6 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "src/index.html",
 			favicon: "src/images/favicon.png",
-		}),
-		new TypedCssModulesPlugin({
-			globPattern: "src/**/*.css",
 		}),
 	],
 };

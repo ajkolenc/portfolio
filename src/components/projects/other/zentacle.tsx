@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ProjectDetails } from "../../ProjectDetails";
 import { Categories, Project } from "../types";
 
 import icon from "images/zentacle_icon.png";
@@ -13,12 +12,6 @@ export const Zentacle: Project = {
 	slug: "zentacle",
 	iconURL: icon,
 	renderPage: ({ project }) => {
-		return (
-			<ProjectDetails
-				project={project}
-				links={links}
-				roles={roles}
-			></ProjectDetails>
-		);
+		return <div></div>;
 	},
 };

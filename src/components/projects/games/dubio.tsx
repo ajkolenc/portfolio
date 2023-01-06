@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ProjectDetails } from "../../ProjectDetails";
 import { Categories, Project } from "../types";
 
 import dubioIcon from "images/dubio_icon.png";
@@ -25,12 +24,6 @@ export const Dubio: Project = {
 	iconURL: dubioIcon,
 	size: "wide",
 	renderPage: ({ project }) => {
-		return (
-			<ProjectDetails
-				project={project}
-				roles={roles}
-				links={links}
-			></ProjectDetails>
-		);
+		return <div></div>;
 	},
 };

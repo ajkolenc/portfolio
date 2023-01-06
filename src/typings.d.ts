@@ -27,3 +27,5 @@ declare module "*.wav" {
 	const content: any;
 	export default content;
 }
+
+declare module "*.module.css";
