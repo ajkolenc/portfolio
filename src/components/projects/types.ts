@@ -48,6 +48,7 @@ export interface Project {
 	category: Category;
 	name: string;
 	slug: string;
+	shortDescription?: string;
 	iconURL?: string;
 	tileURL?: string;
 	renderPage: React.FunctionComponent<ProjectPageProps>;

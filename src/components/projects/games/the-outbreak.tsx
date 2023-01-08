@@ -21,6 +21,7 @@ export const TheOutbreak: Project = {
 	name: "The Outbreak",
 	category: Categories.games,
 	slug: "the-outbreak",
+	shortDescription: "Use your real-world steps to run away from zombies",
 	iconURL: outbreakIcon,
 	tileURL: outbreakTile2,
 	renderPage: () => {
