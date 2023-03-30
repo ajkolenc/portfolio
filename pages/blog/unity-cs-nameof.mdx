@@ -1,0 +1,22 @@
+import BlogPost from "lib/elements/BlogPost";
+
+import unityCSImage from "images/unity_cs_white.png";
+
+export const meta = {
+	title: "Unity C# Tips: nameof() finally fixes Invoke",
+	timestamp: 1673281445,
+	preview:
+		"If you're like me, you've always avoided using Invoke in Unity. Passing method names as strings? Gross. But C# has a new(ish) trick up its sleeve...",
+	tags: ["unity", "c#", "games"],
+	iconUrl: unityCSImage.src,
+};
+
+{console.log(unityCSImage)}
+
+# {meta.title}
+
+## Other Header
+
+Blah blah blah
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;

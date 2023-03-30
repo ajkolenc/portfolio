@@ -1,0 +1,803 @@
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    --horizontal-margin: 10%;
+    background-color: var(--color-light-grey);
+}
+
+.contentSection {
+    position: relative;
+    width: 100%;
+    padding: 20px var(--horizontal-margin);
+    box-sizing: border-box;
+}
+
+.projectSection {
+    padding-bottom: 40px;
+}
+
+.identitySection {
+    background-color: white;
+}
+
+.identityHomeLink {
+    text-decoration: none;
+    display: block;
+}
+
+.identityLogo {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.identityTitle {
+    display: inline;
+    font-size: 50px;
+    line-height: 1em;
+    margin-bottom: 12px;
+    color: black;
+    text-decoration: none;
+}
+
+.identitySubtitle {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.navContentSection {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0 var(--horizontal-margin);
+}
+
+.navLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+}
+
+.navLinks a {
+    flex-grow: 1;
+    font-family: Sora, Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1em;
+    margin: 0;
+    padding: 15px 10px;
+}
+
+.navLinks a.selected {
+    font-weight: bold;
+}
+
+.footer {
+    position: relative;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding-bottom: 25px;
+    overflow: visible;
+    height: 120px;
+    clear: both;
+}
+
+.footer.extended {
+    height: 220px;
+}
+
+.footerBackgroundBleed {
+    position: fixed;
+    top: 20vh;
+    left: 0;
+    background-color: #111;
+    z-index: -1;
+    height: 150vh;
+    width: 100%;
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.footerLink {
+    position: relative;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    padding: 0 5px;
+}
+
+.footerLink img {
+    width: 100%;
+    height: 100%;
+}
+
+.tabGroup {
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    margin: 0;
+    padding: 0 var(--horizontal-margin);
+    padding-top: 10px;
+    border-bottom: 2px solid var(--color-primary);
+    background-color: white;
+}
+
+.tab {
+    margin: 0;
+    padding: 10px 0px;
+    padding-bottom: 8px;
+    flex-grow: 1;
+    max-width: 200px;
+    border: 0;
+    color: var(--color-primary);
+    font-family: Sora, Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    font-weight: lighter;
+    border-radius: 8px 8px 0 0;
+    background-color: white;
+}
+
+.tab.selected {
+    color: white;
+    background-color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* .tab:first-child {
+    padding-left: var(--horizontal-margin);
+}
+
+.tab:last-child {
+    padding-right: var(--horizontal-margin);
+} */
+
+.contentPreviewList {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.contentPreviewGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(200px, 30%), 1fr));
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.textContentPreview {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.textContentPreview:first-child {
+    padding-top: 0px;
+}
+.textContentPreview:last-child {
+    padding-bottom: 0px;
+    border-bottom: 0px;
+}
+
+.textContentPreviewTitle {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.textContentPreviewDescription {
+    display: flex;
+    flex-direction: column;
+}
+
+.textContentPreviewImage {
+    width: 90px;
+    height: 90px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.textContentPreviewSubtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+
+.imageContentPreview {
+    display: block;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.imageContentPreviewImage {
+    height: 100%;
+}
+
+.imageContentPreviewLabel {
+    position: absolute;
+    width: 100%;
+    padding: 7px 15px;
+    box-sizing: border-box;
+    background-color: var(--color-primary);
+    color: white; 
+    bottom: 0;
+    left: 0;
+    transform: translateY(calc(100% - 33px));
+    transition: transform 0.25s ease;
+}
+
+.imageContentPreview:hover .imageContentPreviewLabel {
+    transform: translateY(0);
+}
+
+.imageContentPreviewTitle {
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 3px;
+    color: white;
+}
+
+.imageContentPreviewDescription {
+    font-weight: lighter;
+    font-size: 14px;
+    padding: 5px 0px;
+    padding-bottom: 2px;
+    box-sizing: border-box;
+    line-height: 1.5em;
+}
+
+.inlineImageLeft, .inlineImageRight {
+    margin: 30px;
+    margin-top: 3px;
+    width: 30%;
+    height: auto;
+}
+
+.inlineImageLeft {
+    margin-left: 0px;
+    float: left;
+}
+
+.inlineImageRight {
+    margin-right: 0px;
+    float: right;
+}
+
+.blogSection {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.blogFilter {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px;
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+.blogFilterTitle {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 12px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.blogFilterTag {
+    display: block;
+    background-color: rgba(0,0,0,0.01);
+    margin-bottom: 0;
+    padding: 5px 0px;
+}
+
+.divider {
+    margin: 0px 0px;
+    width: 100%;
+    padding: 0;
+    height: 1px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.videoEmbed {
+    display: block;
+    /* aspect-ratio: 16 / 9; */
+    margin-bottom: 10px;
+}
+
+.horizontalGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 5px 0px;
+}
+
+.buttonLink {
+    display: block;
+    flex: 1;
+    background-color: var(--color-primary);
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+    padding: 8px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: lighter;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonLinkIcon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-left: 10px;
+    padding-bottom: 1px;
+}
+
+.projectAwards {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 20px;
+    margin-bottom: 15px;
+}
+
+.projectAward {
+    display: flex;
+    flex-direction: row;
+    height: 65px;
+    min-width: none;
+    position: relative;
+    text-align: center;
+}
+
+.projectAwardText {
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: center;
+    width: 130px;
+    margin: 0 -5px;
+    font-size: 0.7em;
+}
+
+.projectAwardPlacement {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 0.8em;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.projectAwardEvent {
+    margin: 0;
+    margin-bottom: 2px;
+    line-height: 1.2em;
+}
+
+.projectAwardCategory {
+    font-size: 0.8em;
+    line-height: 1.2em;
+}
+
+.projectAwardBranch {
+    height: 100%;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.projectAwardBranch.right {
+    transform: scaleX(-1);
+}
+
+.projectAwards img {
+    min-width: 0;
+    height: auto;
+    flex-shrink: 1;
+    flex-grow:  1;
+}
+
+.projectColumns {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 40px;
+}
+
+.projectInfoColumn {
+    position: relative;
+    flex-grow:1;
+    flex-shrink: 0;
+    max-width: 480px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectImage {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.projectInfoTable {
+    position: relative;
+    width: 100%;
+    margin: 5px auto;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+}
+
+.projectInfoTable td {
+    vertical-align: top;
+    font-weight: lighter;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 10px 15px;
+}
+
+.projectInfoTable tr:last-child td {
+    border: 0;
+}
+
+.projectInfoTable tr td:first-child {
+    font-weight: normal;
+    padding-left: 0;
+}
+
+.projectDescription {
+    flex-shrink: 1;
+}
+
+.smallColumn {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.aboutSection {
+    padding-bottom: 30px;
+}
+
+.workHistorySection {
+    padding-top: 40px;
+    background-color: var(--color-primary-light);
+}
+
+.workHistorySection h4 {
+    margin-top: 0px;
+}
+
+.trackListing {
+    width: calc(100% - 0px);
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.trackListingTrack:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.trackListingTrack td {
+    padding: 20px 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.trackListingTrack:last-child td {
+    border-bottom: none;
+}
+
+.trackListingTrack td:last-child {
+    text-align: right;
+    padding-right: 15px;
+    font-size: 0.8em;
+}
+
+.trackListingTrackButton {
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    padding: 8px;
+}
+
+.trackListingTrackButton img {
+    width: 100%;
+    height: 100%;    
+}
+
+.musicPlayer {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-basis: content;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100px;
+    background-color: var(--color-primary);
+    box-sizing: border-box;
+    color: white;
+    transition: opacity 0.3s, transform 0.3s ease;
+}
+
+.musicPlayerPlaylineTapArea {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 20px;    
+    top: -5px;
+    background-color: transparent;
+}
+
+.musicPlayerPlayline {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -5px;
+    background-color: #AAA;
+    pointer-events: none;
+}
+
+.musicPlayerPlaylineFilled {
+    background-color: var(--color-primary-dark);
+    transform: scaleX(0.95);
+    transform-origin: 0%;
+    transition: transform 0.1s linear;
+}
+
+.musicPlayerCover {
+    position: relative;
+    height: 100%;
+    margin-right: 13px;
+}
+
+.musicPlayerCover img {
+    height: 100%;
+    width: auto;
+}
+
+.musicPlayerTrackDetails {
+    position: relative;
+    flex-shrink: 1;
+    min-width: 0;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 3px;
+}
+
+.musicPlayerTrackName {
+    font-weight: normal;
+    font-size: 1.25em;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.musicPlayerAlbumName {
+    color: rgba(255,255,255,0.8);
+    font-weight: lighter;
+    text-decoration: none;
+    font-size: 0.85em;
+    text-transform: uppercase;
+}
+
+a.musicPlayerAlbumName:hover {
+    text-decoration: underline;
+}
+
+.musicPlayerFullControls {
+    flex-grow: 2;
+    display: flex;
+    width: 120px;
+    margin-right: calc(30% + 50px);
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.musicPlayerMobileControls {
+    display: none;
+}
+
+.musicPlayerButton {
+    flex-shrink: 0;
+    height: 60px;
+    width: 60px;
+    background-color: transparent;
+    border: 0px solid white;
+    padding: 8px;
+}
+
+.musicPlayerButtonSmall {
+    flex-shrink: 0;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: 0px solid white;
+    padding: 8px;
+}
+
+.musicPlayer > *:last-child {
+    margin-right: 5px;
+}
+
+.musicPlayerButton img, .musicPlayerButtonSmall img {
+    width: 100%;
+    height: 100%;    
+}
+
+.musicPlayerHidden {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.musicPlayerVisible {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+@media (min-width: 1400px) {
+    .main {
+        --horizontal-margin: calc((100% - 1200px)/2);
+    }
+}
+
+@media (max-width: 850px) {
+    .main {
+        --horizontal-margin: 20px;
+        font-size: 14px;
+    }
+
+    .websiteLogo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .websiteTitle {
+        font-size: 40px;
+    }
+
+    .websiteSubtitle {
+        font-size: 14px;
+    }
+
+    .navLinks a {
+        font-size: 16px;
+    }    
+
+    .tab {
+        font-size: 12px;
+        border-width: 1px;
+    }
+
+    .footer.extended {
+        height: 190px;
+    }
+
+    .contentPreviewGrid {
+        grid-template-columns: repeat(auto-fill, minmax(max(160px, 30%), 1fr));
+        gap: 15px;
+    }
+
+    .textContentPreviewTitle {
+        font-size: 20px;
+    }
+
+    .textContentPreviewImage {
+        width: 60px;
+        height: 60px;
+        align-self:flex-start;
+    }
+
+    .imageContentPreviewLabel {
+        transform: translateY(calc(100% - 28px));
+    }
+
+    .imageContentPreviewTitle {
+        font-size: 10px;
+    }
+
+    .imageContentPreviewDescription {
+        font-size: 12px;
+    }
+
+    .projectColumns {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .projectInfoColumn {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .videoEmbed {
+        margin: 0px calc(-1 * var(--horizontal-margin));
+        width: calc(100% + 2 *var(--horizontal-margin));
+        margin-bottom: 10px;
+        height: auto;
+        padding: 0;
+    }
+
+    .inlineImageLeft, .inlineImageRight {
+        width: 40%;
+        margin-bottom: 10px;
+    }
+
+    .inlineImageLeft {
+        margin-right: 15px;
+    }
+
+    .buttonLinkIcon {
+        padding-bottom: 2px;
+    }
+
+    .horizontalGroup {
+        clear: both;
+    }
+
+    .musicPlayer {
+        height: 70px;
+    }
+
+    .musicPlayerTrackDetails {
+        flex-grow: 1;
+    }
+
+    .musicPlayerButton {
+        width: 50px;
+        height: 50px;
+    }
+
+    .musicPlayerFullControls {
+        display: none;
+    }
+
+    .musicPlayerMobileControls {
+        display: block;
+    }
+
+    .projectAwardText {
+        width: 100px;
+    }    
+}
