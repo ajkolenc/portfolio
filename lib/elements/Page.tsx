@@ -33,7 +33,12 @@ export const Page: React.FunctionComponent<PageProps> = ({ children }) => {
 		<div className={styles.main}>
 			<ContentSection className={styles.identitySection}>
 				<Link href="/" className={styles.identityHomeLink}>
-					<Image className={styles.identityLogo} alt="" src={logoImage} />
+					<Image
+						className={styles.identityLogo}
+						src={logoImage}
+						alt=""
+						priority
+					/>
 					<h1 className={styles.identityTitle}>AJ Kolenc</h1>
 				</Link>
 				<p className={styles.identitySubtitle}>
@@ -75,7 +80,7 @@ export const Page: React.FunctionComponent<PageProps> = ({ children }) => {
 			{children}
 			<ContentSection
 				className={`${styles.footer} ${
-					musicState.currentTrack ? styles.extended : ""
+					!musicState.isStopped ? styles.extended : ""
 				}`}
 			>
 				<div className={styles.footerBackgroundBleed}></div>

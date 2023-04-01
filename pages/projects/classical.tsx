@@ -5,6 +5,7 @@ import icon from "images/classical-icon.png";
 import ProjectDetails from "lib/elements/ProjectDetails";
 import { TrackListing } from "lib/elements/TrackListing";
 
+import meditationsAudio from "audio/Classical/meditations-on-knowledge.mp3";
 import fugalSonataAudio from "audio/Classical/fugue_sonata.mp3";
 import fugueGMajorAudio from "audio/Classical/fugue16.mp3";
 import fugueCMinorAudio from "audio/Classical/FugueInCMinor.mp3";
@@ -27,6 +28,11 @@ export const ClassicalPieces: Album = {
 	coverURL: icon,
 	projectURL: `/projects/${meta.slug}`,
 	tracks: [
+		{
+			name: "Meditations on Knowledge",
+			audioUrl: meditationsAudio,
+			duration: 163,
+		},
 		{
 			name: "Piano Sonata No.1",
 			audioUrl: pianoSonata1Audio,
@@ -57,12 +63,12 @@ export default function Classical() {
 	return (
 		<ProjectDetails
 			meta={meta}
-			video={{ src: "https://youtu.be/DyBjRNqHlmQ", native: false }}
+			video={{ src: "https://youtu.be/p9H9XiKn4KE", native: false }}
 			info={[
 				{ title: "Composed In", data: ["Finale", "Flat.io"] },
 				{
 					title: "Written For",
-					data: ["Piano", "String Orchestra", "Violin"],
+					data: ["Voice", "Piano", "Strings"],
 				},
 			]}
 		>

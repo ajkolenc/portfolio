@@ -33,6 +33,7 @@ import { meta as ATTInstallation } from "./att-installation";
 import { meta as ImpracticalJokers } from "./impractical-jokers";
 import { meta as SesameStreetGames } from "./sesame-street";
 import { meta as Portfolio } from "./portfolio";
+import Head from "next/head";
 
 export const allProjects: ProjectMetadata[] = [
 	TheOutbreak,
@@ -92,6 +93,9 @@ export default function ProjectPage() {
 
 	return (
 		<Page>
+			<Head>
+				<title>Projects</title>
+			</Head>
 			<TabGroup
 				options={tabs}
 				selectedOptionIndex={selectedProjectTab}

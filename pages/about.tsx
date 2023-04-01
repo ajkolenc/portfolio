@@ -8,16 +8,21 @@ import portrait from "images/me_7.jpg";
 import styles from "styles/App.module.css";
 import { ButtonLink } from "lib/elements/ButtonLink";
 import { Divider } from "lib/elements/Divider";
+import Head from "next/head";
 
 export default function AboutPage() {
 	return (
 		<Page>
+			<Head>
+				<title>About</title>
+			</Head>
 			<ContentSection className={styles.aboutSection}>
 				<div className={styles.smallColumn}>
 					<Image
 						src={portrait}
 						className={styles.inlineImageLeft}
 						alt="AJ Kolenc"
+						priority
 					/>
 					<p>
 						Hello! I&apos;m AJ, an Amsterdam-based freelance developer focused
